@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Kanit", "Segoe UI", Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: #000;
+}
+
+.wrap{
+
+    width: 1000px;
+    max-width: 100%;
+    background-color: rgb(125, 188, 243); 
+    margin: auto;
+}
+
+/* =====================header=========================== */
+
+
+
+header {}
+
+nav {}
+
+.hero-header {}
+
+.shopping {}
+
+
+
+.hero-header {}
+
+.shopping {}
+
+.future-manu {}
+
+.trending-manu {}
+
+.product {}
+
+.valentine {}
+
+.endless {}
+
+footer {}
