@@ -93,10 +93,10 @@
 </div>
 
 <div class="future">
-    <div class="future-manu">
+    <div class="future-menu">
             <h2>The future in your hands</h2>
             <div class="future-slider">
-                <button class="arrow left" onclick="slideLeft()">❮</button>
+                <button class="arrow left" onclick="slideLeft1()">❮</button>
                 <div class="future-wrapper">
                     <div class="future-header">
                         <ul>
@@ -109,33 +109,40 @@
                         </ul>
                     </div>
                 </div>
-                <button class="arrow right" onclick="slideRight()">❯</button>
+                <button class="arrow right" onclick="slideRight1()">❯</button>
             </div>
     </div>
 </div>
-<div class="trending-manu"></div>
+
+<div class="trending">
+        <div class="trending-menu">
+            <h2>Trending on eBay</h2>
+            <div class="trending-slider">
+                <button class="arrow left" onclick="slideLeft2()">❮</button>
+                <div class="trending-wrapper">
+                    <div class="trending-header">
+                        <ul>
+                            <li class="trending-Luxury"><img src="img/Luxury.jpg"></li>
+                            <li class="trending-Collectibles and art"><img src="img/Collectibles and art.webp"></li>
+                            <li class="trending-Home and garden"><img src="img/Home and garden.jfif"></li>
+                            <li class="trending-Trading cards"><img src="img/Trading cards.webp"></li>
+                            <li class="trending-Health and beauty"><img src="img/Health and beauty.jpg"></li>
+                            <li class="trending-Hobbies"><img src="img/Hobbies.jfif"></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="slideRight2()">❯</button>
+            </div>
+    </div>
+</div>
+
 <div class="product"></div>
 <div class="valentine"></div>
 <div class="endless"></div>
 <footer></footer>
 
-<script>
-let scrollAmount = 0;
-const slider = document.querySelector(".future-header ul");
+<script src="script.js"></script>
 
-function slideRight(){
-  scrollAmount += 400;   
-  slider.style.transform = `translateX(-${scrollAmount}px)`;
-}
-
-function slideLeft(){
-  scrollAmount -= 400;
-  if(scrollAmount < 0){
-    scrollAmount = 0;
-  }
-  slider.style.transform = `translateX(-${scrollAmount}px)`;
-}
-</script>
 
 </body>
 

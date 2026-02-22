@@ -231,9 +231,11 @@ width: 1000px;
 max-width: 100%;
 margin: auto;
 
+padding: 15px;
+
 }
 
-.future-manu{
+.future-menu{
 
 }
 .future-header{
@@ -300,7 +302,7 @@ margin: auto;
   position: relative;
    width: 100%;
 
-
+padding: 15px;
   
 }
 
@@ -327,3 +329,102 @@ margin: auto;
   right: -20px;
 }
 
+/* trending-menu */
+
+.trending{
+width: 1000px;
+max-width: 100%;
+margin: auto;
+
+padding: 15px;
+
+}
+
+.trending-menu{
+
+}
+.trending-header{
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+
+}
+
+  .trending-header ul{
+  display: flex;
+  gap: 40px;
+  transition: 0.5s;
+  align-items: center;
+}
+.trending-header ul li{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgb(143, 141, 141);
+  overflow: hidden;
+  flex-shrink: 0;   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trending-header ul li img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+.trending-Luxury,
+.trending-Collectibles and art,
+.trending-Home and garden,
+.trending-Trading cards,
+.trending-Health and beauty,
+.trending-Hobbies{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;     
+  object-fit: cover;      
+
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid rgb(143, 141, 141); 
+  overflow: hidden;
+
+}
+
+.trending-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+}
+
+.trending-slider{
+  position: relative;
+   width: 100%;
+
+padding: 15px;
+
+}
+.arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  z-index: 100;
+}
+.arrow.left{
+  left: -20px;
+}
+
+.arrow.right{
+  right: -20px;
+}
