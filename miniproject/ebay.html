@@ -94,17 +94,23 @@
 
 <div class="future">
     <div class="future-manu">
-        <h2>The future in your hands</h2>
-        <div class="future-header">
-            <ul>
-                <li><img src="img/telephone.webp" alt="telephone"></li>
-                <li><img src="img/bag.webp" alt="bag"></li>
-                <li><img src="img/clock.webp" alt="clock"></li>
-                <li><img src="img/printer.webp" alt="printer"></li>
-                <li><img src="img/laptop.avif" alt="laptop"></li>
-                <li><img src="img/headphones.jfif" alt="headphones"></li>
-            </ul>
-        </div>
+            <h2>The future in your hands</h2>
+            <div class="future-slider">
+                <button class="arrow left" onclick="slideLeft()">❮</button>
+                <div class="future-wrapper">
+                    <div class="future-header">
+                        <ul>
+                            <li class="future-telephone"><img src="img/telephone.webp"></li>
+                            <li class="future-bag"><img src="img/bag.webp"></li>
+                            <li class="future-clock"><img src="img/clock.webp"></li>
+                            <li class="future-printer"><img src="img/printer.webp"></li>
+                            <li class="future-laptop"><img src="img/laptop.avif"></li>
+                            <li class="future-headphones"><img src="img/headphones.jfif"></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="slideRight()">❯</button>
+            </div>
     </div>
 </div>
 <div class="trending-manu"></div>
@@ -112,6 +118,24 @@
 <div class="valentine"></div>
 <div class="endless"></div>
 <footer></footer>
+
+<script>
+let scrollAmount = 0;
+const slider = document.querySelector(".future-header ul");
+
+function slideRight(){
+  scrollAmount += 400;   
+  slider.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+function slideLeft(){
+  scrollAmount -= 400;
+  if(scrollAmount < 0){
+    scrollAmount = 0;
+  }
+  slider.style.transform = `translateX(-${scrollAmount}px)`;
+}
+</script>
 
 </body>
 

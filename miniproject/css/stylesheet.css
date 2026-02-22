@@ -227,54 +227,103 @@ a {
 }
 
 .future{
-
-  padding: 20px;
-  width: 1000px;
-  max-width: 100%;
-  margin: auto;
-  
-  display: flex;
-
-  overflow: hidden;
+width: 1000px;
+max-width: 100%;
+margin: auto;
 
 }
 
 .future-manu{
-  /* padding: 20px;
-  width: 1000px;
-  max-width: 100%;
+
+}
+.future-header{
+  overflow: hidden;
+  width: 100%;
   margin: auto;
-  
-  display: flex; */
 
 }
 
-.future-header ul {
-  list-style: none;
-  display: flex;     
-  padding: 0;
-  margin: 0;  
+  .future-header ul{
+  display: flex;
   gap: 40px;
-
-  
+  transition: 0.5s;
+  align-items: center;
 }
+
 .future-header ul li{
   width: 150px;
   height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgb(143, 141, 141);
   overflow: hidden;
+  flex-shrink: 0;   
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .future-header ul li img{
-  /* width: 100px;
-  height: auto;
-  display: flex;*/
-  gap: 20px; 
-  
-  width: 100%;
-  height: 100%;
-  object-fit: contain; 
-   /* object-fit: cover;     */
-  
-  /* overflow: hidden; */
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
 }
+
+
+
+.future-telephone,
+.future-bag,
+.future-clock,
+.future-printer,
+.future-laptop,
+.future-headphones{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;     
+  object-fit: cover;      
+
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid rgb(143, 141, 141); 
+  overflow: hidden;
+
+}
+
+.future-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+}
+
+.future-slider{
+  position: relative;
+   width: 100%;
+
+
+  
+}
+
+.arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  z-index: 100;
+}
+.arrow.left{
+  left: -20px;
+}
+
+.arrow.right{
+  right: -20px;
+}
+
