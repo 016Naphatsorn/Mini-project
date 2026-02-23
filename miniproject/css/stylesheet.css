@@ -124,12 +124,63 @@ a {
   font-weight: 600;
   display: block;
   padding: 10px 15px;
+
+  position: relative;
 }
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
   background-color: #f8f8f8;
   
+}
+
+/* ซ่อน dropdown ก่อน */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 300px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  
+
+}
+.dropdown-content {
+  
+   display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  line-height: 1.6;
+ 
+  
+
+
+}
+.nav-menu-img img{
+  width: 600px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+/* เมื่อ hover ให้แสดง */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* --------------------------------------------------------------------- */
+.hero-header-bg{
+   background-color: #2548d1;
+   width: 100%;
 }
 .hero-header{
   background-color: #2548d1;
@@ -145,6 +196,7 @@ a {
   /* justify-content: space-between; */
   align-items: center; 
 }
+
 .hero-header-box a{
   background-color: #b2c0f4;
   color: #2548d1;
