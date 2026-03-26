@@ -1,31 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login/Register</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* กล่อง */
+.box {
+    background: #fff;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* โลโก้ */
+.logo {
+    font-size: 40px;
+}
+.e {color:red;}
+.b {color:blue;}
+.a {color:green;}
+.y {color:orange;}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #3665f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2c54c7;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    color: #3665f3;
+    cursor: pointer;
+}
+
+/* ซ่อน */
+.hidden {
+    display: none;
+}
+</style>
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="login">
-            <h1 class="logo"><span class="e">e</span><span class="b">b</span><span
-             class="a">a</span><span class="y">y</span></h1>
-            <h3>Sign in to your account</h3>
-        
-             <form action="" class="Continue">
-                 <input class="Continue-button"type="text" placeholder="Email or username">
-                <button class="Continue-button" type="submit">Continue</button>
-                <button class="Continue-button" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
-          <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
-        </svg>Continue with Google</button>
-                <button class="Continue-button" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-        </svg>Continue with Facebook</button>
-              <a href="ebay.html"> GO BACK</a>
-            </form>
-        
-        </div>
+
+<div class="box">
+
+    <h1 class="logo">
+        <span class="e">e</span>
+        <span class="b">b</span>
+        <span class="a">a</span>
+        <span class="y">y</span>
+    </h1>
+
+    
+    <div id="loginBox">
+        <h3>Login</h3>
+
+        <form onsubmit="login(event)">
+            <input type="text" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPass" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="loginMsg"></p>
+
+        <a onclick="showRegister()">Create account</a>
     </div>
+
+    
+    <div id="registerBox" class="hidden">
+        <h3>Register</h3>
+
+        <form onsubmit="register(event)">
+            <input type="text" id="regEmail" placeholder="Email" required>
+            <input type="password" id="regPass" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p id="regMsg"></p>
+
+        <a onclick="showLogin()">Back to login</a>
+    </div>
+
+</div>
+
+<script>
+
+
+function showRegister() {
+    document.getElementById("loginBox").classList.add("hidden");
+    document.getElementById("registerBox").classList.remove("hidden");
+}
+
+function showLogin() {
+    document.getElementById("registerBox").classList.add("hidden");
+    document.getElementById("loginBox").classList.remove("hidden");
+}
+
+
+function register(e) {
+    e.preventDefault();
+
+    let email = document.getElementById("regEmail").value;
+    let pass = document.getElementById("regPass").value;
+
+    if (localStorage.getItem(email)) {
+        document.getElementById("regMsg").innerHTML = "❌ มี user นี้แล้ว";
+    } else {
+        localStorage.setItem(email, pass);
+        document.getElementById("regMsg").innerHTML = "✅ สมัครสำเร็จ";
+    }
+}
+
+
+function login(e) {
+    e.preventDefault();
+
+    let email = document.getElementById("loginEmail").value;
+    let pass = document.getElementById("loginPass").value;
+
+    let saved = localStorage.getItem(email);
+
+    if (saved === null) {
+        document.getElementById("loginMsg").innerHTML = "❌ ไม่พบผู้ใช้";
+    } else if (saved === pass) {
+        document.getElementById("loginMsg").innerHTML = "✅ Login สำเร็จ";
+        setTimeout(() => {
+            window.location.href = "ebay.html"; 
+        }, 1000);
+    } else {
+        document.getElementById("loginMsg").innerHTML = "❌ รหัสผ่านผิด";
+    }
+}
+
+</script>
+
 </body>
 </html>
